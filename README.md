@@ -3,7 +3,6 @@
 **Master of Economic Science candidate | University of the Witwatersrand**  
 BSc Mathematical Statistics | University of Pretoria  
 📧 natashya1d@icloud.com | 🌍 Johannesburg, South Africa  
-Actuarial Exam A211 (May 2026 sitting)
 
 ---
 
