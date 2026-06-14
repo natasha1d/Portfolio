@@ -97,6 +97,31 @@ repository. Both do-files are fully reproducible given access to the cleaned QLF
 datasets at the paths specified in the global macros.
 
 ## Masters Extension (In Progress)
-The next phase replaces the multinomial logit and Heckman wage model with machine 
-learning alternatives (Random Forest, XGBoost, and penalised regression), comparing 
-predictive accuracy, distributional fit, and policy interpretability across methods.
+The next phase extends this framework using **Double/Debiased Machine Learning (DDML)** 
+implemented in Stata via the `ddml` package (Ahrens, Hansen, Schaffer & Wiemann, 2024, 
+*The Stata Journal*).
+
+The structural multinomial logit and Heckman wage model from the Honours paper are 
+replaced with Neyman-orthogonal, cross-fitted estimators that allow controls to enter 
+nonparametrically — addressing potential misspecification bias in the traditional approach.
+
+**Models being compared:**
+- Partially linear model (`ddml, model(partial)`) vs multinomial logit for occupational 
+  reallocation
+- Interactive model (`ddml, model(interactive)`) for binary employment transitions
+- Heckman 2-stage vs DML-based wage prediction
+
+**Key methodological features:**
+- Stacking estimation (`pystacked`) combining lasso, random forest, and gradient 
+  boosting as base learners — data-driven learner selection
+- K-fold cross-fitting to ensure independence between nuisance estimation and 
+  second-stage causal estimates
+- Neyman orthogonality ensuring local robustness to first-stage estimation error
+
+**Validation:** same framework as Honours paper (MAE, RMSE, CI coverage, chi-square 
+GOF, Gini, stochastic dominance) applied to both traditional and DML approaches for 
+direct comparability.
+
+**Reference:** Ahrens, A., Hansen, C.B., Schaffer, M.E., & Wiemann, T. (2024). 
+ddml: Double/debiased machine learning in Stata. *The Stata Journal, 24*(1). 
+https://doi.org/10.1177/1536867X241233641
