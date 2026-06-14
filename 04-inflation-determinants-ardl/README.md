@@ -1,5 +1,5 @@
 # Inflation Determinants: ARDL Cointegration Analysis
-### South Africa, 2001–Present | Term Paper
+### South Africa, 2001–2025 | Advanced Econometrics Honours Term Paper
 
 ## Overview
 This project investigates the long-run and short-run determinants of inflation (CPI) 
