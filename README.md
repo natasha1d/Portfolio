@@ -1,21 +1,16 @@
 # Natashya Dikola — Quantitative Research Portfolio
 
 **Master of Economic Science candidate | University of the Witwatersrand**  
-BSc Mathematical Statistics | University of Pretoria  
-📧 natashya1d@icloud.com | 🌍 Johannesburg, South Africa  
+Student member, Institute and Faculty of Actuaries  
+natashya1d@icloud.com | Johannesburg, South Africa (on exchange at UCLouvain, Belgium, until January 2027)  
 
 ---
 
 ## About
 
-I am a quantitative researcher and analyst with a strong foundation in econometrics,
-statistical modelling, causal inference, machine learning, and financial analytics.
-My work spans labour market microsimulation, asset pricing, time series econometrics,
-and applied machine learning — implemented across Python, R, Stata, SAS, and SQL.
+I am a quantitative analyst with a strong foundation in econometrics, statistical modelling, causal inference, machine learning, and financial analytics. My work spans labour market microsimulation, asset pricing, time series econometrics, and applied machine learning — implemented across Python, R, Stata, SAS, and SQL.
 
-My research follows a deliberate arc: applying and validating traditional structural
-econometric methods, then extending them using modern ML and causal inference frameworks
-to assess where each approach excels and where it breaks down.
+My research follows a deliberate arc: applying and validating traditional structural econometric methods, then extending them using modern ML and causal inference frameworks to assess where each approach excels and where it breaks down
 
 ---
 
@@ -95,8 +90,7 @@ further feature engineering.
 ## 03 — Labour Market Microsimulation: COVID-19 Shock Analysis
 📁 [View project](./03-labour-market-microsimulation/)
 
-*Honours Research Project — presented at the Presidential Climate Commission (PCC)
-2026 conference, Thessaloniki, Greece.*
+*Honours research project. Presented as keynote at the Energy Modelling Platform for Africa (EMP-A) Joint High-Level Community Meeting, Cape Town, March 2026, co-hosted by African Energy Futures, the Presidential Climate Commission and Climate Compatible Growth; and at the 10th International Conference on Applied Theory, Macro and Empirical Finance, University of Macedonia, Thessaloniki, April 2026.*
 
 Full structural microsimulation of South Africa's labour market response to the
 COVID-19 shock (2019 Q4 → 2020 Q1), applied to QLFS microdata covering approximately
@@ -108,8 +102,7 @@ macro-constraint enforcement · Heckman two-stage wage model · Weighted KDE wag
 distributions · Stochastic dominance testing (`sdgr`, `sdom`) · Gini coefficients
 (`ineqdeco`) · Bootstrapped S-rho · MAE, RMSE, CI coverage, chi-square GOF
 
-**Validation result:** Chi-square GOF = 28.80 (p=0.004) with calibration vs
-438.05 (p<0.0001) without — confirming the importance of post-stratification.
+**Validation result:** Post-stratification calibration improved the chi-square goodness-of-fit statistic from 438.05 (p<0.0001) to 28.80 (p=0.004). The calibrated model fits the observed distribution far better, though the test still detects some remaining differences, which the Masters extension aims to address.
 
 **Masters extension (in progress):** Replacing the multinomial logit and Heckman
 model with Double/Debiased Machine Learning (`ddml`, Ahrens et al., 2024) using
@@ -185,20 +178,17 @@ Financial analytics
 ## Education
 
 **University of the Witwatersrand** — Master of Economic Science *(2026 – present)*  
-Coursework: Time-Series Econometrics · Big Data & Analytics · Quantitative Research
-Techniques · Advanced Mathematical Economics
+Coursework: Time-Series Econometrics · Quantitative Research
+Techniques · Advanced Mathematical Economics 
 
-**University of the Witwatersrand** — Bachelor of Economic Science *(2025)*  
-Keynote speaker, Presidential Climate Commission 2026, Thessaloniki
-Coursework: Advanced Econometrics · Financial Economics: Capital Markets, Investments and International Finace 
-· Advanced Macroeconomics · Advanced Microeconomics · Advanced Mathematical Economics
+**Université catholique de Louvain (UCLouvain)** — Exchange semester *(September 2026 – January 2027)*. 
+Coursework: Applied Econometrics · Time-Series Econometrics · Dynamical Methods in Economics · Advanced Microeconomics I · Growth, Population and Environment
 
-**University of Pretoria** — Bachelor of Science in Mathematical Statistics *(2023)*  
+**University of the Witwatersrand** — Bachelor of Economic Science with Honours *(Graduated March 2026)*  
+Aggregate 71%; Advanced Mathematical Economics 87%; Research Paper in Economics 80%. 
+Coursework: Advanced Econometrics · Financial Economics: Capital Markets, Investments and International Finance 
+· Advanced Macroeconomics · Advanced Microeconomics  
 
----
+**University of Pretoria** — Bachelor of Science *(Graduated May 2024)*  
+Final-year modules in statistics, data analytics, economics and mathematics
 
-## Current Role
-
-**MTN South Africa — Graduate Analyst** *(April 2026 – present)*  
-Selected for MTN's Data Science Development Programme. Supporting operational
-reporting, data validation, and analytics across multiple business units.
