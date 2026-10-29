@@ -1,10 +1,7 @@
--- =====================================================================
 -- 03  Portfolio summary
 --   frequency    = claims / exposure-years
 --   severity     = incurred / claims
 --   pure premium = incurred / exposure-years  (= frequency x severity)
--- =====================================================================
-
 CREATE OR REPLACE TABLE result_03_portfolio AS
 SELECT
     COUNT(*)                                      AS policies,
