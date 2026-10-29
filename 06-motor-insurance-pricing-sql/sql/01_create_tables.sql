@@ -1,26 +1,15 @@
--- =====================================================================
 -- 01  Load raw data and build clean analysis tables
--- Data: freMTPL2 (French motor third-party liability), CASdatasets
---   freMTPL2freq : one row per policy  (677,991 policies, exposure in years)
---   freMTPL2sev  : one row per claim   (claim amounts in EUR)
--- =====================================================================
-
 CREATE OR REPLACE TABLE raw_policy AS
 SELECT * FROM read_csv_auto('data/freMTPL2freq.csv');
 
 CREATE OR REPLACE TABLE raw_claim AS
 SELECT * FROM read_csv_auto('data/freMTPL2sev.csv');
 
--- ---------------------------------------------------------------------
 -- Clean policy table
---  * exposure capped at 1 year (a policy-year cannot exceed 1)
---  * policies with more than 4 claims flagged as suspected data errors
---    and excluded from the modelling flag (standard treatment in the
---    literature on this dataset)
---  * rating factors banded with CASE so each band has enough data
---  * deterministic 80/20 train/test split on a hash of the policy ID,
---    so the relativities in 06 are tested on policies they never saw
--- ---------------------------------------------------------------------
+--  * cap exposure at 1 (a policy-year can't be more than 1)
+--  * more than 4 claims -> probably data errors, flag them and leave out of the model (this is what people usually do with this data)
+--  * group the rating factors into bands so each band has enough data
+--  * 80/20 train/test split using a hash of the policy ID, so the test set is policies the model has never seen
 CREATE OR REPLACE TABLE policy AS
 SELECT
     IDpol                                   AS policy_id,
@@ -70,10 +59,7 @@ SELECT
     CASE WHEN hash(IDpol) % 5 = 0 THEN 'test' ELSE 'train' END AS sample
 FROM raw_policy;
 
--- ---------------------------------------------------------------------
--- Clean claim table: add a claim ID and keep only claims that belong
--- to a known policy
--- ---------------------------------------------------------------------
+-- Clean claim table: give each claim an ID and only keep claims that match a policy we actually have
 CREATE OR REPLACE TABLE claim AS
 SELECT
     ROW_NUMBER() OVER (ORDER BY c.IDpol, c.ClaimAmount) AS claim_id,
@@ -82,11 +68,7 @@ SELECT
 FROM raw_claim c
 WHERE EXISTS (SELECT 1 FROM raw_policy p WHERE p.IDpol = c.IDpol);
 
--- ---------------------------------------------------------------------
--- Large-loss threshold: 99.5th percentile of individual claim amounts.
--- Claims are capped here; the part above the cap is spread back across
--- the whole portfolio as a large-loss load (see 05).
--- ---------------------------------------------------------------------
+-- Large losses: cap each claim at the 99.5th percentile. Anything above the cap gets added back as a load over the whole portfolio later (05).
 CREATE OR REPLACE TABLE large_loss_threshold AS
 SELECT ROUND(QUANTILE_CONT(claim_amount, 0.995), 0) AS cap
 FROM claim;
