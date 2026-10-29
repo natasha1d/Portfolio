@@ -8,7 +8,7 @@ natashya1d@icloud.com | Johannesburg, South Africa (on exchange at UCLouvain, Be
 
 ## About
 
-I am a quantitative analyst with a strong foundation in econometrics, statistical modelling, causal inference, machine learning, and financial analytics. My work spans labour market microsimulation, asset pricing, time series econometrics, and applied machine learning — implemented across Python, R, Stata, SAS, and SQL.
+I am a quantitative analyst with a strong foundation in econometrics, statistical modelling, causal inference, machine learning, and financial analytics. MMy work spans labour market microsimulation, asset pricing, insurance pricing, time series econometrics, and applied machine learning — implemented across Python, R, Stata, SAS, and SQL.
 
 My research follows a deliberate arc: applying and validating traditional structural econometric methods, then extending them using modern ML and causal inference frameworks to assess where each approach excels and where it breaks down.
 
@@ -20,7 +20,7 @@ My research follows a deliberate arc: applying and validating traditional struct
 |---|---------|---------|-------|
 | [01](#01) | Equity Style Factor Analysis | Paired t-tests, ANOVA, OLS, VAR & IRF | Python |
 | [02](#02) | ML Return Forecasting | Linear Regression, Ridge, GridSearchCV | Python |
-| [03](#03) | Labour Market Microsimulation | Multinomial logit, Heckman, Job queuing, DML (in progress) | Stata |
+| [03](#03) | Labour Market Microsimulation | Multinomial logit, Heckman, Job queuing, Lasso/elastic net comparison (in progress) | Stata, R |
 | [04](#04) | Inflation Determinants | ARDL bounds testing, UECM/RECM, Granger causality | R |
 | [05](#05) | APT JSE Factor Model | APT, PCA, Fama-MacBeth, Rolling regression, CAPM comparison | R |
 | [06](#06) | Motor Insurance Pricing Analysis | Data quality checks, one-way analysis, large-loss capping, credibility, out-of-sample lift & Gini | SQL |
@@ -100,9 +100,9 @@ distributions · Stochastic dominance testing (`sdgr`, `sdom`) · Gini coefficie
 
 **Validation result:** Post-stratification calibration improved the chi-square goodness-of-fit statistic from 438.05 (p<0.0001) to 28.80 (p=0.004). The calibrated model fits the observed distribution far better, though the test still detects some remaining differences, which the Masters extension aims to address.
 
-**Masters extension (in progress):** My Masters research extends this by comparing the structural models with regularised machine learning (lasso, elastic net) in R, using the same validation framework for both. Early results show that machine learning predicts who is employed more accurately, but does not bring poverty and inequality closer to observed outcomes.
+**Masters extension (in progress):** Comparing the structural models with regularised machine learning (lasso, elastic net) in R, using the same validation framework for both. Early results show that machine learning predicts who is employed more accurately, but does not bring poverty and inequality closer to observed outcomes.
 
-**Tools:** Stata — `mlogit`, `heckman`, `calibrate`, `ineqdeco`, `sdgr`, `sdom`,
+**Tools:** Stata and R — `mlogit`, `heckman`, `calibrate`, `ineqdeco`, `sdgr`, `sdom`,
 `srho`, `svyset`, `twoway`
 
 ---
@@ -184,10 +184,10 @@ factors were independent, which motivates a Poisson/Gamma GLM as the next step.
 **Languages:** Python · R · Stata · SQL · SAS · Advanced Excel
 
 **Econometrics & Statistics:** Time series analysis · Cointegration · Panel data ·
-Microsimulation · Survey-weighted estimation · Causal inference · Double/Debiased ML
+Microsimulation · Survey-weighted estimation · Causal inference · Regularised regression (lasso, ridge, elastic net)
 
 **Machine Learning:** Supervised regression · Ridge/Lasso · Cross-validation ·
-Feature engineering · Stacking · Pipeline design
+Feature engineering · Pipeline design
 
 **Finance:** Factor models · Asset pricing · Performance attribution · Risk modelling ·
 Financial analytics · Insurance pricing · Credibility theory
@@ -196,7 +196,7 @@ Financial analytics · Insurance pricing · Credibility theory
 
 ## Education
 
-**University of the Witwatersrand** — Master of Economic Science *(February 2026 - February 2027)*  
+**University of the Witwatersrand** — Master of Economic Science *(January 2026 - February 2027, expected)*  
 Coursework: Time-Series Econometrics · Quantitative Research
 Techniques · Advanced Mathematical Economics 
 
