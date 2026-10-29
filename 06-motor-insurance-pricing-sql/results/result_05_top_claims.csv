@@ -1,0 +1,11 @@
+rank,claim_id,policy_id,claim_amount,driver_age,bonus_malus,vehicle_age,area,region
+1,7842,1120377,4075401.0,19,100,13,B,Centre
+2,2968,110846,1403057.0,20,100,13,C,Centre
+3,13400,2141337,1301173.0,18,100,14,D,Rhone-Alpes
+4,18031,3122016,774412.0,40,63,7,E,Rhone-Alpes
+5,10262,2008127,390742.0,57,50,2,D,Rhone-Alpes
+6,16204,3025890,369132.0,36,50,1,A,Champagne-Ardenne
+7,7704,1117644,307096.0,21,90,1,C,Bretagne
+8,3957,158309,301635.0,46,50,3,A,Centre
+9,17095,3075820,287423.0,78,50,18,E,Provence-Alpes-Cotes-D'Azur
+10,18788,3150210,281897.0,61,54,4,D,Centre

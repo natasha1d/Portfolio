@@ -1,0 +1,11 @@
+check_name,n_found,status
+Duplicate policy IDs,0,PASS
+Claims with no matching policy,0,PASS
+Policies whose claim count differs from claim records,0,PASS
+Policies with claims but no claim amount,0,PASS
+Exposure above 1 year (capped to 1),1224,REVIEW
+Zero or negative exposure,0,PASS
+"More than 4 claims in a year (flagged, excluded)",8,REVIEW
+Zero or negative claim amounts,0,PASS
+Driver age outside 18-100,0,PASS
+Missing rating factors,0,PASS
