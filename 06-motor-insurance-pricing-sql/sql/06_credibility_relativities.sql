@@ -1,17 +1,11 @@
--- =====================================================================
 -- 06  Credibility-weighted rating relativities (training data only)
---
 -- relativity     = level pure premium / portfolio pure premium
 -- credibility Z  = min(1, sqrt(claims / 1082))
 --                  limited-fluctuation standard: 1,082 claims gives a
 --                  90% chance that observed frequency is within 5% of
 --                  the true frequency
 -- credible rel.  = Z x observed relativity + (1 - Z) x 1.00
---
--- Small segments are pulled towards the average, so a few unlucky
--- claims in a thin cell do not create an extreme rate.
--- =====================================================================
-
+-- Small segments are pulled towards the average, so a few unlucky claims in a thin cell do not create an extreme rate.
 CREATE OR REPLACE TABLE result_06_relativities AS
 WITH lvl AS (
     SELECT
@@ -47,13 +41,8 @@ SELECT
 FROM rel
 ORDER BY factor, level;
 
--- ---------------------------------------------------------------------
--- Simple multiplicative risk score for every policy:
--- product of its credible relativities for the main factors.
--- (A one-way product ignores correlation between factors; a GLM would
---  fix that. The point here is to test, out of sample, whether the
---  relativities rank risk correctly.)
--- ---------------------------------------------------------------------
+-- Simple multiplicative risk score for every policy: just multiply its  credible relativities for the main factors.
+-- (This one-way product ignores correlation between factors, a GLM would fix that. The point here is to test out of sample whether the relativities rank risk correctly.)
 CREATE OR REPLACE TABLE policy_score AS
 WITH r AS (
     SELECT factor, level, credible_relativity AS rel FROM result_06_relativities
