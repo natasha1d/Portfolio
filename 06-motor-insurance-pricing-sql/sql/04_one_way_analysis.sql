@@ -1,10 +1,5 @@
--- =====================================================================
 -- 04  One-way analysis of every rating factor in a single query
--- UNPIVOT turns the rating-factor columns into (factor, level) rows, so
--- one GROUP BY gives frequency, severity and pure premium for every
--- level of every factor, instead of writing one query per factor.
--- =====================================================================
-
+-- UNPIVOT turns the rating-factor columns into (factor, level) rows, so one GROUP BY gives frequency, severity and pure premium for every level of every factor, instead of writing one query per factor.
 CREATE OR REPLACE VIEW policy_long AS
 UNPIVOT (
     SELECT policy_id, exposure, claim_count, incurred, incurred_capped,
