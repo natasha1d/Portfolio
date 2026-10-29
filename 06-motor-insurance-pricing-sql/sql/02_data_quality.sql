@@ -1,9 +1,5 @@
--- =====================================================================
 -- 02  Data quality and reconciliation checks
--- Every check returns one row: what was tested, the count found and a
--- PASS / REVIEW status, so problems are visible before any analysis.
--- =====================================================================
-
+-- Every check returns one row: what was tested, the count found and a PASS / REVIEW status, so problems are visible before any analysis.
 CREATE OR REPLACE TABLE result_02_data_quality AS
 WITH claims_per_policy AS (
     SELECT policy_id, COUNT(*) AS n_records, SUM(claim_amount) AS amount
