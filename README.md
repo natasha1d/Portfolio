@@ -10,7 +10,7 @@ natashya1d@icloud.com | Johannesburg, South Africa (on exchange at UCLouvain, Be
 
 I am a quantitative analyst with a strong foundation in econometrics, statistical modelling, causal inference, machine learning, and financial analytics. My work spans labour market microsimulation, asset pricing, time series econometrics, and applied machine learning — implemented across Python, R, Stata, SAS, and SQL.
 
-My research follows a deliberate arc: applying and validating traditional structural econometric methods, then extending them using modern ML and causal inference frameworks to assess where each approach excels and where it breaks down
+My research follows a deliberate arc: applying and validating traditional structural econometric methods, then extending them using modern ML and causal inference frameworks to assess where each approach excels and where it breaks down.
 
 ---
 
@@ -37,12 +37,7 @@ CI coverage, chi-square goodness-of-fit, Gini coefficients, and stochastic domin
 tests. The model used a multinomial logit for occupational reallocation and a
 Heckman two-stage model for wage prediction.
 
-My Masters research extends this by replacing the parametric structural models with
-**Double/Debiased Machine Learning** (`ddml`, Ahrens et al., 2024, *The Stata Journal*)
-— using Neyman-orthogonal, cross-fitted estimators with stacked learners (lasso,
-random forest, gradient boosting). The same validation framework is applied to both
-approaches, enabling a rigorous comparison of causal identification, predictive
-accuracy, and distributional fit between traditional econometrics and modern ML.
+My Masters research extends this by comparing the structural models with regularised machine learning (lasso, elastic net) in R, using the same validation framework for both. Early results show that machine learning predicts who is employed more accurately, but does not bring poverty and inequality closer to observed outcomes.
 
 ---
 
@@ -105,10 +100,7 @@ distributions · Stochastic dominance testing (`sdgr`, `sdom`) · Gini coefficie
 
 **Validation result:** Post-stratification calibration improved the chi-square goodness-of-fit statistic from 438.05 (p<0.0001) to 28.80 (p=0.004). The calibrated model fits the observed distribution far better, though the test still detects some remaining differences, which the Masters extension aims to address.
 
-**Masters extension (in progress):** Replacing the multinomial logit and Heckman
-model with Double/Debiased Machine Learning (`ddml`, Ahrens et al., 2024) using
-stacked learners, with identical validation applied to both approaches for direct
-comparison.
+**Masters extension (in progress):** My Masters research extends this by comparing the structural models with regularised machine learning (lasso, elastic net) in R, using the same validation framework for both. Early results show that machine learning predicts who is employed more accurately, but does not bring poverty and inequality closer to observed outcomes.
 
 **Tools:** Stata — `mlogit`, `heckman`, `calibrate`, `ineqdeco`, `sdgr`, `sdom`,
 `srho`, `svyset`, `twoway`
@@ -198,13 +190,13 @@ Microsimulation · Survey-weighted estimation · Causal inference · Double/Debi
 Feature engineering · Stacking · Pipeline design
 
 **Finance:** Factor models · Asset pricing · Performance attribution · Risk modelling ·
-Financial analytics
+Financial analytics · Insurance pricing · Credibility theory
 
 ---
 
 ## Education
 
-**University of the Witwatersrand** — Master of Economic Science *(2026 – present)*  
+**University of the Witwatersrand** — Master of Economic Science *(February 2026 - February 2027)*  
 Coursework: Time-Series Econometrics · Quantitative Research
 Techniques · Advanced Mathematical Economics 
 
