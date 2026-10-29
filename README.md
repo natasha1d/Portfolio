@@ -1,4 +1,4 @@
-# Natashya Dikola — Quantitative Research Portfolio
+# Natashya Dikola — Portfolio
 
 **Master of Economic Science candidate | University of the Witwatersrand**  
 Student member, Institute and Faculty of Actuaries  
@@ -23,6 +23,7 @@ My research follows a deliberate arc: applying and validating traditional struct
 | [03](#03) | Labour Market Microsimulation | Multinomial logit, Heckman, Job queuing, DML (in progress) | Stata |
 | [04](#04) | Inflation Determinants | ARDL bounds testing, UECM/RECM, Granger causality | R |
 | [05](#05) | APT JSE Factor Model | APT, PCA, Fama-MacBeth, Rolling regression, CAPM comparison | R |
+| [06](#06) | Motor Insurance Pricing Analysis | Data quality checks, one-way analysis, large-loss capping, credibility, out-of-sample lift & Gini | SQL |
 
 ---
 
@@ -157,6 +158,32 @@ and the COVID-19 period.
 
 **Tools:** R — `lmtest`, `sandwich`, `relaimpo`, `strucchange`, `zoo`, `corrplot`,
 `ggplot2`, `tidyverse`, `quantmod`
+
+---
+
+<a name="06"></a>
+## 06 — Motor Insurance Pricing Analysis in SQL
+📁 [View project](./06-motor-insurance-pricing-sql/)
+
+End-to-end pricing analysis of 677,991 real motor insurance policies and 26,444
+claims (freMTPL2, CASdatasets), written in SQL: from raw data to rating
+relativities tested on unseen policies.
+
+**Methods:** Data quality and reconciliation checks · Exposure-weighted claim
+frequency, severity and pure premium by rating factor · Large-loss capping at the
+99.5th percentile with a portfolio load · Limited-fluctuation credibility ·
+80/20 train/test split · Exposure-weighted deciles, lift and Gini
+
+**SQL techniques:** CTEs · Window functions (`SUM() OVER`, `RANK`, `LAG`, running
+totals) · `UNPIVOT` · `QUALIFY` · Correlated subqueries · `EXISTS` / `NOT EXISTS`
+
+**Key findings:** Claims above €20,000 are 0.8% of claims but 37% of cost. Drivers
+aged 18–20 claim 3.2 times as often as average. On held-out policies, the riskiest
+tenth claims 5.6 times as much as the safest (Gini 0.26). The score over-predicts
+the riskiest tenth because the one-way relativities are multiplied as if the
+factors were independent, which motivates a Poisson/Gamma GLM as the next step.
+
+**Tools:** SQL (DuckDB) · Python for the runner and charts
 
 ---
 
