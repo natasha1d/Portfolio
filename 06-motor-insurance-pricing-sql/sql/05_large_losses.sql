@@ -1,10 +1,5 @@
--- =====================================================================
 -- 05  Large losses
--- A handful of very large claims can swamp a segment's experience.
--- Claims are capped at the 99.5th percentile; the excess above the cap
--- is charged back to everyone as a flat large-loss load.
--- =====================================================================
-
+-- A handful of very large claims can swamp a segment's experience. Claims are capped at the 99.5th percentile; the excess above the cap is charged back to everyone as a flat large-loss load.
 -- Claim size distribution
 CREATE OR REPLACE TABLE result_05_severity_distribution AS
 WITH banded AS (
