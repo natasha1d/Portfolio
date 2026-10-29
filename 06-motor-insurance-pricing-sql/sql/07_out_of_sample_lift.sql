@@ -1,14 +1,8 @@
--- =====================================================================
 -- 07  Does the score separate good and bad risks on unseen policies?
 -- Test sample only (20% of policies held out in 01).
---
--- Exposure-weighted deciles: policies are sorted by risk score and cut
--- into ten groups of equal exposure using a running SUM() window.
+-- Exposure-weighted deciles: policies are sorted by risk score and cut into ten groups of equal exposure using a running SUM() window.
 -- Lift  = pure premium of the worst decile / pure premium of the best
--- Gini  = from the Lorenz curve of cumulative exposure vs cumulative
---         incurred, ordered from lowest to highest predicted risk
--- =====================================================================
-
+-- Gini  = from the Lorenz curve of cumulative exposure vs cumulative incurred, ordered from lowest to highest predicted risk
 CREATE OR REPLACE TABLE result_07_deciles AS
 WITH ordered AS (
     SELECT
